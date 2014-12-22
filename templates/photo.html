@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load thumbnail %}
+
+{% block content %}
+<div class="container marketing">
+    {% for photo in photos %}
+  <div class="row">
+
+        <h2>{{ photo.title }}</h2>
+        <div class="text-center"><img src="{{ photo.image|thumbnail_url:'presentation' }}" alt="" /></div>
+        <div class="desc">
+            {{ photo.desc|safe }}
+        </div>
+    </div>
+    <div class="clear"></div>
+    {% endfor %}
+</div>
+{% if not forloop.last %}
+<hr>
+{% endif %}
+
+{% endblock %}

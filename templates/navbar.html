@@ -1,0 +1,29 @@
+{% load i18n %}
+<div id="navbar" class="box" >
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-static-top">
+
+        <div class="navbar-header">
+	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </a>
+        <a class="navbar-brand" href="/">Bootstrap 3</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li {% if view == 'photo' %} class="active"{% endif %}><a href="{% url 'photo' %}" >
+               {% trans "PHOTO" %}</a>
+            </li>
+            <li {% if view == 'media' %} class="active"{% endif %}><a href="{% url 'media' %}">
+               {% trans "MEDIA" %}</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div><!-- /container -->
+</div><!-- /navbar wrapper -->
+
+
+
